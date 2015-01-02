@@ -1,0 +1,14 @@
+<table>
+  <thead>
+    <th ng-repeat="column in columns track by $index">
+      {{ column.header }}
+    </th>
+  </thead>
+  <tbody>
+      <tr ng-repeat="row in rows track by $index">
+        <td ng-repeat="column in columns track by $index">
+          {{ row[column.fieldName] }}
+        </td>
+      </tr>
+  </tbody>
+</table>

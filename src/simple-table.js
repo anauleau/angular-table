@@ -1,18 +1,13 @@
-'use strict';
 
 angular.module('anauleau.simpleTable', [])
-
-  .directive('myDirective', function() {
-
+  .directive('simpleTable', function() {
+    'use strict';
     return {
       restrict: 'EAC',
-      scope: true,
-      compile: function compile(tElement, tAttrs, transclude) {
-        tElement.html('<span>hello {{name}}</span>');
-        return function postLink(scope, iElement, iAttrs, controller) {
-          scope.name = 'world';
-        };
-      }
+      scope: {
+        rows: '=',
+        columns: '='
+      },
+      templateUrl: 'simple-table.html'
     };
-
   });
